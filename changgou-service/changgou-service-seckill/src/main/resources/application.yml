@@ -5,17 +5,17 @@ spring:
     name: seckill
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.211.132:3306/changgou_seckill?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://172.31.105.210:3306/changgou_seckill?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
-    password: 123456
+    password: root
   rabbitmq:
-    host: 192.168.211.132 #mq的服务器地址
+    host: 172.31.105.210 #mq的服务器地址
     username: guest #账号
     password: guest #密码
   main:
     allow-bean-definition-overriding: true
   redis:
-    host: 192.168.211.132
+    host: 172.31.105.210
     port: 6379
 eureka:
   client:

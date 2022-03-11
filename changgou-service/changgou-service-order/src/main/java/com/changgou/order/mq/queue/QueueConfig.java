@@ -19,7 +19,8 @@ public class QueueConfig {
     public Queue orderDelayQueue() {
         return QueueBuilder
                 .durable("orderDelayQueue")
-                .withArgument("x-dead-letter-exchange", "orderListenerExchange")   // orderDelayQueue数据会过期，过期后会进入到死信队列，死信队列数据绑定到其他交换机
+                // orderDelayQueue数据会过期，过期后会进入到死信队列，死信队列数据绑定到其他交换机
+                .withArgument("x-dead-letter-exchange", "orderListenerExchange")
                 .withArgument("x-dead-letter-routing-key", "orderListenerQueue")
                 .build();
     }

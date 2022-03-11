@@ -19,7 +19,8 @@ public class QueueConfig {
     @Bean
     public Queue delaySeckillQueue() {
         return QueueBuilder.durable("delaySeckillQueue")
-                .withArgument("x-dead-letter-exchange", "seckillExchange") // 消息超市进入死信队列
+                // 消息超市进入死信队列
+                .withArgument("x-dead-letter-exchange", "seckillExchange")
                 .withArgument("x-dead-letter-routing-key", "seckillQueue")
                 .build();
     }

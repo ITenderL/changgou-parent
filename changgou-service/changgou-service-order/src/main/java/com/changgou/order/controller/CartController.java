@@ -35,8 +35,8 @@ public class CartController {
     @GetMapping(value = "list")
     public Result<List<OrderItem>> list() {
         // 获取当前用户信息
-        //OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails) SecurityContextHolder.getContext().getAuthentication().getDetails();
-        //String token = details.getTokenValue();
+        // OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails) SecurityContextHolder.getContext().getAuthentication().getDetails();
+        // String token = details.getTokenValue();
         Map<String, String> userInfo = TokenDecode.getUserInfo();
         System.out.println(userInfo);
         String username = userInfo.get("username");
